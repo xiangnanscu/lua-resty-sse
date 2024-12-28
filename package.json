@@ -1,0 +1,19 @@
+{
+  "name": "lua-resty-sse",
+  "version": "0.1.0",
+  "description": "Lua Server Side Events client cosocket driver for OpenResty / ngx_lua",
+  "main": "index.js",
+  "scripts": {
+    "rc": "yarn release && yarn push",
+    "release": "opm upload && opm clean dist",
+    "commit": "git add . && git commit -am ",
+    "g": "yarn commit",
+    "postg": "yarn postpush",
+    "push": "yarn commit",
+    "postpush": "while true; do git push origin master && { echo 'Git push succeeded'; break; } || echo 'Git push failed, retrying in 1 seconds'; sleep 1; done",
+    "pull": "while true; do git pull origin master && { echo 'Git pull succeeded'; break; } || echo 'Git pull failed, retrying in 1 seconds'; sleep 1; done",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
